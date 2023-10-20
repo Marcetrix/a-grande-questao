@@ -1,0 +1,25 @@
+.nav-bar {
+    display: flex;
+}
+
+.column-left {
+    width: 100%;
+    display: table-cell;
+    justify-content: left;
+    padding: 10px;
+  }
+
+.column-right {
+    width: 100%;
+    display: table-cell;
+    justify-content: right;
+    padding: 10px;
+}
+
+.icon {
+    background: url('../components/resources/Imgs/Mute_Icon.svg');
+    height: 30px;
+    width: 30px;
+    display: block;
+    color: black;
+}
