@@ -3,48 +3,54 @@ import { Link, useNavigate } from "react-router-dom";
 import Popup from "./Popup";
 import { getLeaderBoardData } from "./background/Background_Services";
 import Leaderboard from "./Leaderboards";
-import Login from "./Login"
-import Signup from "./Signup"
-import BaseComponent from "./BaseComponent";
+import NavBar from "./NavBar.js";
 
 import "../styles/general_styles.css";
-import "../styles/home_styles.css";
+import "../styles/main_screen_styles.css";
 
-
-function Home() {
+function MainScreen() {
   const navigate = useNavigate()
 
   const [isOpen, setIsOpen] = useState(false);
-  
-    setTimeout(() => {
-      const LeaderBoardData = getLeaderBoardData();
-      console.log(LeaderBoardData);
-    }, 8000);
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
 
+  const goToGame = () =>{
+    navigate('/Game')
+  }
+
+  const goToLeaderBoards = () =>{
+    navigate('/LeaderBoards')
+  }
+
+  const goToArchievements = () =>{
+    navigate('/Archievements')
+  }
+
   return (
+    <div className="main-screen">
+      <NavBar showBackButton={false} showLogoutButton={true}/>
     <div className="center">
-      <h1 className="header">A GRANDE QUESTÃO</h1>
       <div className="start-options-container">
         <div className="center">
             <div className="start-options-container">
-                <button className="standard-button start-buttons" onClick={navigate('/Game')}>
-                    Play
+                <button className="standard-button start-buttons" onClick={() => goToGame()}>
+                    Jogar
                 </button>
-                <button className="standard-button start-buttons" onClick={navigate('/LeaderBoards')}>
-                    LeaderBoards
+                <button className="standard-button start-buttons" onClick={() => goToLeaderBoards()}>
+                    Placar
                 </button>
-                <button className="standard-button start-buttons" onClick={navigate('/Archievements')}>
-                    Archievements
+                <button className="standard-button start-buttons" onClick={() => goToArchievements()}>
+                    Conquistas
                 </button>
             </div>
         </div>
       </div>
     </div>
+    </div>
   );
 }
 
-export default Home;
+export default MainScreen;

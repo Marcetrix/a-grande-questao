@@ -10,7 +10,7 @@ import "../styles/home_styles.css";
 import { auth } from "./Auth/firebase";
 
 
-const Login = ({ BackButton }) => {
+const Login = ({ BackButton, switchToResetPasswordComponent }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -22,7 +22,7 @@ const Login = ({ BackButton }) => {
     signInWithEmailAndPassword(auth ,email, password)
       .then((userCredential) => {
         console.log(userCredential);
-        navigate('/Main');
+        navigate('/MainScreen');
       })
       .catch((error) => {
         console.log(error);
@@ -52,17 +52,20 @@ const Login = ({ BackButton }) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <label>Password</label>
+            <label>Senha</label>
           </div>
           <div className="button-container">
             <button type="submit" onClick={signIn}>
               Login
             </button>
             <button type="button" onClick={BackButton}>
-              Back
+              Voltar
             </button>
           </div>
         </form>
+        <div class="bottom">
+          <div id="forgotpassword"><a href=""onClick={switchToResetPasswordComponent}>Forgot your password?</a></div>
+        </div>
       </div>
     </div>
   );

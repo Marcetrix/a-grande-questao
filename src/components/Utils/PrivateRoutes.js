@@ -4,6 +4,7 @@ import AuthDetails from '../Auth/AuthDetails'
 
 const PrivateRoutes = () => {
     let auth = AuthDetails
+    console.log(auth + "######")
     return(
         auth ? <Outlet/> : <Navigate to="/"/> 
     )

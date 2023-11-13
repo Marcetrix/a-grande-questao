@@ -13,6 +13,7 @@ import { auth } from "./Auth/firebase";
 const Signup = ({ BackButton }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
 
   const signUp = (e) => {
@@ -51,12 +52,22 @@ const Signup = ({ BackButton }) => {
             />
             <label>Password</label>
           </div>
+          <div className="user-box">
+            <input
+              type="password"
+              name="confirmPassword"
+              required
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <label>Confirm Password</label>
+          </div>
           <div className="button-container">
             <button type="submit" onClick={signUp}>
               Signup
             </button>
             <button type="button" onClick={BackButton}>
-              Back
+              Voltar
             </button>
           </div>
         </form>
@@ -68,19 +79,24 @@ const Signup = ({ BackButton }) => {
 function doSignup(){
   let email = document.getElementById("email").value
   let password = document.getElementById("password").value
+  let confirmPassword = document.getElementById("confirmPassword").value
 
-  const auth = getAuth();
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-    });
+  if (password.value == confirmPassword.value) {
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
+  } else {
+      
+  }
 }
 
 

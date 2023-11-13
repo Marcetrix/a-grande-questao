@@ -14,22 +14,37 @@
     -webkit-background-clip: text;
   }
 
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td {
-    padding-top: 10px;
-    text-align: center;
-    padding-left: 90px;
-    font-size: 20px;
-    color: white;
-  }
+  /* Leaderboard.css */
 
-  th {
-      padding-left: 90px;
-      font-size: 30px;
-  }
+.leaderboard-container {
+  text-align: center;
+  margin: 50px auto; /* Center the container horizontally */
+}
+
+.leaderboard-title {
+  color: white;
+  font-size: 48px; /* Increase the font size of the title */
+  margin-bottom: 20px; /* Add some space below the title */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  align-self: center;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+  color: white;
+}
+
+tr {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+
+}
 
 

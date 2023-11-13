@@ -1,22 +1,37 @@
 .nav-bar {
-    display: flex;
+    color: transparent; 
 }
 
-.column-left {
+.main-screen {
     width: 100%;
-    display: table-cell;
-    justify-content: left;
-    padding: 10px;
   }
 
-.column-right {
-    width: 100%;
-    display: table-cell;
-    justify-content: right;
-    padding: 10px;
+.toolbar {
+    width: 90%;
+    background: transparent; 
+    box-shadow: none;
+    align-self: center;
 }
 
-.icon {
+.title-navbar {
+    font-family: 'Just Another Hand';
+    font-size: 30px;
+    word-spacing: 16px;
+    color: #ffffff;
+    align-self: center;
+  }
+
+.back-button {
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+}
+
+.logout {
+    font-size: 15px;
+}
+
+.icon-size {
     background: url('../components/resources/Imgs/Mute_Icon.svg');
     height: 30px;
     width: 30px;

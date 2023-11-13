@@ -1,0 +1,184 @@
+.start-options-container {
+    display: flex;  
+    justify-content: center;
+    flex-direction: column;
+  }
+
+.main-screen {
+  width: 100%;
+}
+
+.right-option {
+  margin-right: 40px;
+}
+
+  .title {
+    font-family: 'Just Another Hand';
+    font-size: 80px;
+    word-spacing: 16px;
+    color: #ffffff;
+  }
+
+  .link-decoration {
+    text-decoration: none;
+  }
+
+.center { 
+  display: 'flex';
+  align-items: 'center';
+  justify-content: 'center';
+}
+
+.center-login-box { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.start-buttons {
+    width: 15%;
+    height: 50px;
+    margin: 10px auto;
+    padding: 0px;
+  }
+
+  .start-buttons {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+    width: 15%;
+    height: 50px;
+    margin: 10px auto;
+    padding: 0px;
+  }
+  
+  .start-buttons:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  }
+  
+  .start-buttons:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .start-buttons:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+
+  .login-box {
+    width: 300px;
+    background: #ffffff;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border-color: aqua;
+  }
+  
+  h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #333;
+    text-align: center;
+  }
+  
+  form {
+    position: relative;
+  }
+  
+  .user-box {
+    position: relative;
+    margin-bottom: 25px;
+  }
+  
+  .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #777;
+    outline: none;
+    background: transparent;
+  }
+  
+  .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #777;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  
+  .user-box input:focus ~ label,
+  .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #007bff;
+    font-size: 12px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #007bff;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .bottom {
+    margin-top: 20px;
+    color: rgb(230, 230, 230);
+}
+#forgotpassword {
+    margin: 20px auto;
+    background-color: transparent;
+    font-size: 12px;
+}
+#forgotpassword a {
+    text-decoration: none;
+    color: grey;
+    font-weight: 100;
+}
+#forgotpassword a:hover {
+    text-decoration: underline;
+}

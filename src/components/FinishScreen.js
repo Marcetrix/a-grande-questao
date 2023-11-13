@@ -6,23 +6,22 @@ import "../styles/finish_screen_styles.css"
 
 function FinishScreen () {
 
-    var score = 0;
-    var name = "Marcuss";
+    var score = 1700;
+    let questionsAnswered = 4;
+    var name = "Marcus";
 
     return (
         <div>
-            <h1 className="header"><i class="fa-solid fa-party-horn"/>Parabéns</h1>
+            <h1 className="header"><i class="fa-solid fa-party-horn"/> Parabéns </h1>
             <div className="center">
-            <h1 id="score">Pontuação: 1700</h1>
-            <h3>Informe seu nome:</h3>
-            <input className="name" maxLength={10}></input><br/>
+            <h1 id="score">Pontuação: {score}</h1>
+            <h3>Você acertou {questionsAnswered} de 10 perguntas</h3>
             <button className="button">Inicio</button>
             </div>
         </div>
     )
 
     var score = document.getElementById("score");
-    
 }
 
 function transferScore() {

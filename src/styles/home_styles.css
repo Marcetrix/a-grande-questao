@@ -6,12 +6,21 @@
     
   }
 
+  .title {
+    font-family: 'Just Another Hand';
+    font-size: 80px;
+    word-spacing: 16px;
+    color: #ffffff;
+  }
+
   .link-decoration {
     text-decoration: none;
   }
 
 .center { 
-    width: 100%;
+  display: 'flex';
+  align-items: 'center';
+  justify-content: 'center';
 }
 
 .center-login-box { 
@@ -79,17 +88,13 @@
   }
 
 
-
-
-
-
-
   .login-box {
     width: 300px;
-    background: #000000;
+    background: #ffffff;
     padding: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    border-color: aqua;
   }
   
   h2 {
@@ -153,3 +158,21 @@
     color: #fff;
     font-size: 16px;
   }
+
+  .bottom {
+    margin-top: 20px;
+    color: rgb(230, 230, 230);
+}
+#forgotpassword {
+    margin: 20px auto;
+    background-color: transparent;
+    font-size: 12px;
+}
+#forgotpassword a {
+    text-decoration: none;
+    color: grey;
+    font-weight: 100;
+}
+#forgotpassword a:hover {
+    text-decoration: underline;
+}

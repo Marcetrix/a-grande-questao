@@ -52,10 +52,3 @@ export async function addUserToLeaderBoard(name, points) {
     score: points,
   });
 }
-
-export async function getQuestionsData() {
-  const fbCollection = collection(db, 'questions');
-  const fbDocs = await getDocs(fbCollection);
-  const questionsList = fbDocs.docs.map(doc => doc.data());
-  return questionsList;
-}

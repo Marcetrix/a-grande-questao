@@ -18,30 +18,22 @@ const AuthDetails = () => {
     };
   }, []);
 
-  //move later
-  const userSignOut = () => {
+  function userSignOut () {
     signOut(authUser)
       .then(() => {
         console.log("sign out successful");
+        return true
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {console.log(error)
+        return false;
+      });
+  };
+
+  function userLoggedIn () {
+    return (authUser ? true : false)
   };
 
   return (authUser ? true : false)
-
-  //delete later
-  /*return (
-    <div>
-      {authUser ? (
-        <>
-          <p>{`Signed In as ${authUser.email}`}</p>
-          <button onClick={userSignOut}>Sign Out</button>
-        </>
-      ) : (
-        <p>Signed Out</p>
-      )}
-    </div>
-  );*/
 };
 
 export default AuthDetails ;

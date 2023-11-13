@@ -1,48 +1,46 @@
 import React, { useState } from "react";
 import Sound from "react-sound";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVolumeXmark, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
-import BackgroundMusic from "./background/Background_Music";
-import { ReactComponent as VolumeMutedIcon } from "./resources/Imgs/Mute_Icon.svg";
-import { ReactComponent as VolumeIcon } from "./resources/Imgs/Speaker_Icon.svg";
+import BackButton from "./resources/Imgs/Back-Button.svg";
+import userSignOut from './Auth/AuthDetails'
+import AuthDetails from './Auth/AuthDetails'
 
 import "../styles/nav_bar_styles.css";
+import { AppBar, Box, IconButton, Toolbar, Typography, Button } from "@mui/material";
 
-var isEnabled = false;
-var playStatus = Sound.status.STOPPED;
-var icon = faVolumeXmark;
+  const NavBar = ({ showBackButton, showLogoutButton }) => {
+    const navigate = useNavigate()
+    let auth = AuthDetails
 
-function NavBar() {
-  return (
-    <div className="row">
-      <div className="column-left">
-        <nav>
-          <Link to={"/"}>
-            <FontAwesomeIcon className="icon" icon={faHouse} />
-          </Link>
-        </nav>
-      </div>
-      <div className="column-right">
-        <a onClick={() => changeIcon()}>
-          <VolumeMutedIcon className="icon" />
-        </a>
-      </div>
-      <BackgroundMusic playStatus={playStatus} />
-    </div>
-  );
+    console.log(AuthDetails)
 
-  function changeIcon() {
-    if (isEnabled) {
-      playStatus = Sound.status.STOPPED;
-    } else {
-      playStatus = Sound.status.PLAYING;
+    const doLogOut = (e) => {
+      userSignOut();
+      navigate('/Home');
     }
-    isEnabled = !isEnabled;
-  }
 
-  return <BackgroundMusic playStatus={playStatus} />;
+    const goToMainScreen = () =>{
+      navigate('/MainScreen')
+    }
+  
+    return (
+      <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none', height: 90}}>
+        <Toolbar sx={{ justifyContent: "space-between" }} className="toolbar"> 
+          <IconButton id="backbutton" style={{borderRadius: 0, width: 30}} onClick={() => goToMainScreen()}>
+            {showBackButton ? <img className="back-button" src={BackButton}/> : null} 
+          </IconButton>
+          <Typography >
+            <h6 className="title-navbar">A GRANDE QUESTÃO</h6>
+          </Typography>
+          <Typography id="logout" onClick={() => doLogOut()}> 
+            {showLogoutButton ? <h6 className="logout" ><a>LOGOUT</a></h6> : null} 
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    );
 }
 
 export default NavBar;
