@@ -1,0 +1,14 @@
+
+.archievements-container {
+  text-align: center;
+  margin: 50px auto; /* Center the container horizontally */
+}
+
+.archievements-title {
+  color: white;
+  font-size: 48px; /* Increase the font size of the title */
+  margin-bottom: 20px; /* Add some space below the title */
+}
+
+
+

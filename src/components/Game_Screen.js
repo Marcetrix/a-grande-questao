@@ -88,7 +88,7 @@ function GameScreen() {
 
   function createAnswerButton (answer, index) {
     let button = (
-      <button key={index} id={"answer-" + (index + 1).toString()} className={"standard-button answer-options answer-" + (index + 1).toString()} onClick={() => {setCountDownKey((prevKey) => prevKey + 1);}}>{removeCharacters(answer.answer)}</button>
+      <button key={index} id={"answer-" + (index + 1).toString()} className={"standard-button answer-options answer-" + (index + 1).toString()} onClick={() => {setCountDownKey((prevKey) => prevKey + 1);shouldFinishGame(); }}>{removeCharacters(answer.answer)}</button>
     );
 
     return button;

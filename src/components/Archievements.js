@@ -4,20 +4,18 @@ import { getFirestore, collection, getDocs, setDoc, doc, QuerySnapshot } from 'f
 import firebase from 'firebase/compat/app';
 import Flex from '@react-css/flex'
 import 'firebase/compat/firestore';
-import '../styles/leaderboard_styles.css'
+import NavBar from "./NavBar.js";
+
+import '../styles/archievements_styles.css'
 
 function Archievements() {
 
   return (
-    <div className="center">
-      <h1 className="header">A GRANDE QUESTÃO</h1>
-      <div className="start-options-container">
-        <div className="center">
-            <div className="start-options-container">
-              
-            </div>
-        </div>
-      </div>
+    <div>
+      <NavBar showBackButton={true} showLogoutButton={false}/>
+    <div className="archievements-container">
+      <h1 className="archievements-title">Conquistas</h1>
+    </div>
     </div>
   )
 }
